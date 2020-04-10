@@ -1,3 +1,3 @@
-export { parsePath } from './parser';
-export { absolutize } from './absolutize';
-export { normalize } from './normalize';
+export { parsePath } from './parser.js';
+export { absolutize } from './absolutize.js';
+export { normalize } from './normalize.js';
