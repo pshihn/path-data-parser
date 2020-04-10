@@ -1,0 +1,32 @@
+{
+  "name": "path-data-parser",
+  "version": "0.0.1",
+  "description": "Yet another SVG path parser. This one's tiny",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pshihn/path-data-parser.git"
+  },
+  "keywords": [
+    "SVG",
+    "PATH",
+    "SVGPATH",
+    "pathdata",
+    "parser"
+  ],
+  "author": "Preet Shihn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pshihn/path-data-parser/issues"
+  },
+  "homepage": "https://github.com/pshihn/path-data-parser#readme",
+  "devDependencies": {
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
+  }
+}
