@@ -1,5 +1,6 @@
 import { Segment } from './parser.js';
 
+// Normalize path to include only M, L, C, and Z commands
 export function normalize(segments: Segment[]): Segment[] {
   const out: Segment[] = [];
 

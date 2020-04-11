@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>path-data-parser demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    section {
+      display: block;
+      padding: 30px 20px;
+      box-sizing: border-box;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    input {
+      width: 80%;
+      border: 1px solid;
+      padding: 4px;
+      font-size: inherit;
+      font-family: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <input id="pathIn" placeholder="Enter path string">
+    <button>Submit</button>
+    <p id="absPath"></p>
+    <p id="normPath"></p>
+  </section>
+
+  <p>
+    <canvas width="800" height="600"></canvas>
+  </p>
+
+  <script type="module">
+    import { parsePath, serialize, absolutize, normalize } from '../lib/index.js';
+    const btn = document.querySelector('button');
+    const canvas = document.querySelector('canvas');
+    const absP = document.querySelector('#absPath');
+    const normP = document.querySelector('#normPath');
+    const pathIn = document.querySelector('#pathIn');
+    const ctx = canvas.getContext('2d');
+
+    btn.addEventListener('click', () => {
+      const d = pathIn.value.trim();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const path2d = new Path2D(d);
+      ctx.stroke(path2d);
+
+      const segments = parsePath(d);
+      const absolute = absolutize(segments);
+      const normal = normalize(absolute);
+
+      absP.textContent = serialize(absolute);
+      normP.textContent = serialize(normal);
+    });
+
+  </script>
+</body>
+
+</html>

@@ -13,7 +13,7 @@ export interface Segment {
   data: number[];
 }
 
-const PARAMS: { [key: string]: number } = { A: 7, a: 7, C: 6, c: 6, H: 1, h: 1, L: 2, l: 2, M: 2, m: 2, Q: 4, q: 4, S: 4, s: 4, T: 4, t: 2, V: 1, v: 1, Z: 0, z: 0 };
+const PARAMS: { [key: string]: number } = { A: 7, a: 7, C: 6, c: 6, H: 1, h: 1, L: 2, l: 2, M: 2, m: 2, Q: 4, q: 4, S: 4, s: 4, T: 2, t: 2, V: 1, v: 1, Z: 0, z: 0 };
 
 function tokenize(d: string): PathToken[] {
   const tokens: PathToken[] = new Array();
@@ -87,4 +87,27 @@ export function parsePath(d: string): Segment[] {
     }
   }
   return segments;
+}
+
+export function serialize(segments: Segment[]): string {
+  const tokens: (string | number)[] = [];
+  for (const { key, data } of segments) {
+    tokens.push(key);
+    switch (key) {
+      case 'C':
+      case 'c':
+        tokens.push(data[0], `${data[1]},`, data[2], `${data[3]},`, data[4], data[5]);
+        break;
+      case 'S':
+      case 's':
+      case 'Q':
+      case 'q':
+        tokens.push(data[0], `${data[1]},`, data[2], data[3]);
+        break;
+      default:
+        tokens.push(...data);
+        break;
+    }
+  }
+  return tokens.join(' ');
 }

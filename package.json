@@ -1,6 +1,6 @@
 {
   "name": "path-data-parser",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Yet another SVG path parser. This one's tiny",
   "main": "lib/index.js",
   "module": "lib/index.js",
