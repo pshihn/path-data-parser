@@ -58,8 +58,8 @@ Normalize takes a list of _absolute segments_ and outputs a list of segments wit
 
 This is useful when translating SVG paths to non SVG mediums - Canvas, or some other graphics platform. Most such platforms will support lines and bezier curves. It also simplifies the cases to consider when modifying these segments.
 
-```javavscript
- import { parsePath, serialize, absolutize, normalize } from 'path-data-parser';
+```javascript
+import { parsePath, serialize, absolutize, normalize } from 'path-data-parser';
  
 const segments = parsePath(' M 10 80 Q 52.5 10, 95 80 T 180 80');
 const absoluteSegments = absolutize(segments);
