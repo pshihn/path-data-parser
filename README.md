@@ -1,6 +1,6 @@
 # path-data-parser
 
-I know there are a bunch of SVG path parsers out there, but here's one that I have been using for a few years now. It's small, tree-shakable and provides four simple functions.
+I know there are a bunch of SVG path parsers out there, but here's one that I have been using for a few years now. It's small, tree-shakable and provides four simple functions that I have needed in several graphics projects.
 
 ## Install
 
