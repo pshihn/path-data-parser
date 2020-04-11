@@ -15,11 +15,12 @@
     "url": "git+https://github.com/pshihn/path-data-parser.git"
   },
   "keywords": [
+    "svg path parser",
     "SVG",
-    "PATH",
+    "path parser",
     "SVGPATH",
     "pathdata",
-    "parser"
+    "svg parser"
   ],
   "author": "Preet Shihn",
   "license": "MIT",
